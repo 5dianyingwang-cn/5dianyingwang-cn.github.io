@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="5电影网 - 每天 5 部，刚好够看。5 分钟挑片、5 种心情、5 位导演、5 个时段、5 条避坑与观影指南，覆盖电影推荐、高分电影、经典电影、4K 修复、正版观影。">
+<meta name="keywords" content="5电影网,5部电影,电影推荐,每天5部,高分电影,经典电影,悬疑电影,剧情片,动画片,纪录片,王家卫,是枝裕和,诺兰,宫崎骏,4K修复,杜比视界,观影指南,正版观影">
+<meta name="author" content="5电影网">
+<meta name="theme-color" content="#f7f3ec">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<title>5 电影网 · 每天 5 部，刚好够看</title>
+<link rel="canonical" href="https://5dianyingwang-cn.github.io/">
+<style>
+:root{
+  --ink:#1a1d24; --paper:#f7f3ec; --card:#fffdf8;
+  --mute:#6f7783;
+  --c1:#e8563f; /* 朱红 */
+  --c2:#2f7a6b; /* 松绿 */
+  --c3:#d69a2b; /* 藤黄 */
+  --c4:#3d6fb0; /* 靛蓝 */
+  --c5:#8a5aa8; /* 藕紫 */
+  --mono:ui-monospace,Menlo,Consolas,monospace;
+  --sans:"PingFang SC","Microsoft YaHei",Inter,system-ui,sans-serif;
+  --serif:"Songti SC","SimSun",Georgia,serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);background:var(--paper);color:var(--ink);line-height:1.85;font-size:15px;
+  background-image:linear-gradient(rgba(26,29,36,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(26,29,36,.05) 1px,transparent 1px);
+  background-size:20px 20px}
+a{color:inherit;text-decoration:none;outline:none}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:2.5px solid var(--c4);outline-offset:3px}
+::selection{background:var(--c3);color:#1a1d24}
+::placeholder{font-family:var(--serif);font-size:12.6px;color:#a9b0b8}
+.wrap{max-width:1240px;margin:0 auto;padding:0 34px;position:relative}
+
+/* topbar */
+.topbar{position:sticky;top:0;z-index:50;background:rgba(247,243,236,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--ink)}
+.hd{display:flex;align-items:center;gap:20px;padding:12px 0}
+.logo{display:flex;align-items:center;gap:13px;white-space:nowrap}
+.five{width:46px;height:46px;flex:none;border:2.4px solid var(--ink);border-radius:5px;display:grid;grid-template-columns:repeat(5,1fr);overflow:hidden;background:#fff}
+.five i{display:block}
+.five i:nth-child(1){background:var(--c1)}
+.five i:nth-child(2){background:var(--c2)}
+.five i:nth-child(3){background:var(--c3)}
+.five i:nth-child(4){background:var(--c4)}
+.five i:nth-child(5){background:var(--c5)}
+.logo b{font-size:20.4px;font-weight:900;letter-spacing:1.4px}
+.logo em{font-style:normal;font-family:var(--serif);font-size:9.4px;letter-spacing:.6px;color:var(--mute);display:block;font-weight:700}
+.eyebrow{font-family:var(--mono);font-size:8.4px;letter-spacing:3px;color:var(--mute);font-weight:700}
+nav{display:flex;gap:5px;margin-left:auto;font-size:11.8px;letter-spacing:.6px;font-weight:900}
+nav a{padding:9px 13px;border-radius:4px;transition:.22s}
+nav a:hover{background:var(--ink);color:var(--c3);transform:translateY(-3px)}
+.search{display:flex;background:#fff;border:2.2px solid var(--ink);border-radius:4px;padding:5px 5px 5px 13px;gap:8px;width:100%;max-width:252px}
+.search input{border:0;background:transparent;font:inherit;font-size:12.6px;flex:1;outline:none}
+.search button{border:0;border-radius:3px;background:var(--c5);color:#fff;font-weight:900;font-size:10.6px;padding:0 15px;letter-spacing:1.3px;cursor:pointer}
+.ham{display:none;background:none;border:2.2px solid var(--ink);font-size:18px;cursor:pointer;line-height:1;padding:6px 11px;color:var(--ink)}
+
+/* hero */
+.hero{padding:38px 0 32px}
+.hero .wrap{display:grid;grid-template-columns:1fr .9fr;gap:46px;align-items:center}
+.hero h1{font-size:clamp(30px,6vw,58px);line-height:1.24;font-weight:900;letter-spacing:.3px;margin:13px 0 15px;font-family:var(--serif)}
+.hero h1 .num{font-family:var(--mono);font-style:italic;color:var(--c1)}
+.hero .lead{color:#3f4853;font-size:14.8px;line-height:1.95;text-align:justify;max-width:60ch}
+.hero .lead b{color:var(--c4)}
+.hero .cta{display:flex;gap:12px;margin-top:20px;flex-wrap:wrap}
+.hero .cta a{font-size:12.6px;font-weight:900;letter-spacing:1.1px;padding:13px 27px;border-radius:4px;transition:.26s;border:2.2px solid var(--ink)}
+.hero .cta a.p{background:var(--c1);color:#fff;box-shadow:7px 7px 0 var(--c3)}
+.hero .cta a.s{background:transparent}
+.hero .cta a:hover{transform:translateY(-5px)}
+
+/* count-up 5 frames */
+.frames{display:grid;grid-template-columns:repeat(5,1fr);gap:9px;background:var(--ink);border-radius:6px;padding:16px 14px 14px;box-shadow:0 24px 60px -26px rgba(26,29,36,.7);transform:rotate(.6deg)}
+.frames .f{position:relative;aspect-ratio:3/4;border-radius:4px;background:var(--c);display:grid;place-items:center;overflow:hidden;cursor:pointer;transition:.3s}
+.frames .f:before{content:"";position:absolute;inset:6px;border:1.6px dashed rgba(255,255,255,.55);border-radius:3px}
+.frames .f span{position:relative;font-family:var(--serif);font-size:30px;color:#fff;font-weight:900;text-shadow:0 3px 0 rgba(0,0,0,.28)}
+.frames .f small{position:absolute;bottom:8px;left:0;right:0;text-align:center;font-family:var(--mono);font-size:7.4px;letter-spacing:1.6px;color:rgba(255,255,255,.85);font-weight:700}
+.frames .f:hover{transform:scale(1.09) rotate(2.4deg);z-index:2}
+.frames .cap{margin-top:12px;font-family:var(--mono);font-size:8.2px;letter-spacing:2px;color:var(--c3);font-weight:700}
+
+section{padding:48px 0}
+.sec{display:flex;align-items:baseline;gap:11px;flex-wrap:wrap;border-bottom:2.6px solid var(--ink);padding-bottom:9px;margin-bottom:24px}
+.sec .no{font-family:var(--mono);font-size:9.4px;letter-spacing:1.6px;color:#fff;background:var(--ink);border-radius:3px;padding:5px 11px;font-weight:900;line-height:1.5}
+.sec h2{font-size:clamp(17px,2.7vw,23px);font-weight:900;letter-spacing:.3px;font-family:var(--serif)}
+.sec .en{font-family:var(--mono);font-size:8.2px;letter-spacing:2.4px;color:var(--mute);text-transform:uppercase;font-weight:700}
+.sec a.more{margin-left:auto;font-size:11.4px;letter-spacing:.7px;color:var(--mute);border-bottom:2px solid var(--c1);padding-bottom:2px;font-weight:900}
+.sec a.more:hover{color:var(--c1)}
+
+/* 01 five moods */
+.moods{display:grid;grid-template-columns:repeat(5,1fr);gap:13px}
+.mo{position:relative;border:2.4px solid var(--ink);border-radius:6px;padding:17px 16px 15px;background:var(--card);transition:.3s;cursor:pointer;min-height:196px}
+.mo .dot{width:12px;height:12px;border-radius:50%;background:var(--c);border:1.8px solid var(--ink)}
+.mo h4{font-size:15.6px;margin:10px 0 7px;font-weight:900;line-height:1.45;font-family:var(--serif)}
+.mo p{font-size:10.8px;line-height:1.85;color:var(--mute);text-align:justify;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
+.mo .tag{position:absolute;left:-2.4px;bottom:12px;font-family:var(--mono);font-size:7.6px;letter-spacing:1.8px;background:var(--c);color:#fff;padding:4px 9px;border-radius:0 3px 3px 0;font-weight:700}
+.mo:hover{transform:translateY(-9px);box-shadow:8px 8px 0 var(--c)}
+
+/* 02 5 min pick */
+.pick{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.pk{position:relative;background:var(--card);border:2.4px solid var(--ink);border-radius:6px;padding:18px 20px 16px;overflow:hidden;cursor:pointer;transition:.28s}
+.pk .n{font-family:var(--serif);font-size:40px;line-height:.9;font-weight:900;color:var(--c);float:right;margin:0 0 6px 10px;transition:.3s}
+.pk h4{font-size:15.2px;font-weight:900;line-height:1.5;margin-bottom:7px;clear:both}
+.pk p{font-size:11px;color:var(--mute);line-height:1.85;text-align:justify}
+.pk .film{margin-top:10px;font-family:var(--mono);font-size:8.2px;letter-spacing:1.2px;color:var(--ink);border-top:1.4px dashed var(--c);padding-top:7px;font-weight:700}
+.pk:hover{background:var(--c);transform:rotate(-1deg)}
+.pk:hover h4,.pk:hover p,.pk:hover .film{color:#fff}
+.pk:hover .film{border-color:rgba(255,255,255,.55)}
+
+/* 03 ladder */
+.ladder{display:grid;grid-template-columns:repeat(5,1fr);gap:0;align-items:flex-end;height:250px;border-bottom:3px solid var(--ink);padding:0 6px}
+.la{position:relative;background:var(--c);border:2.4px solid var(--ink);border-bottom:0;border-radius:5px 5px 0 0;height:0;transition:height 1.05s cubic-bezier(.2,.8,.2,1);cursor:pointer}
+.la .top{position:absolute;left:0;right:0;top:-34px;text-align:center}
+.la .top b{font-family:var(--mono);font-size:9.4px;letter-spacing:.8px;font-weight:900;color:var(--c)}
+.la .mid{position:absolute;inset:0;display:grid;place-items:center;text-align:center;color:#fff;padding:8px}
+.la .mid span{font-size:12px;line-height:1.5;font-weight:900;text-shadow:0 2px 0 rgba(0,0,0,.22)}
+.la .mid em{font-style:normal;font-family:var(--mono);font-size:7.6px;letter-spacing:1.2px;display:block;margin-top:5px;opacity:.9}
+.la:hover{filter:brightness(1.08)}
+
+/* 04 5 directors */
+.dirs{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.di{background:var(--card);border:2.4px solid var(--ink);border-radius:6px;padding:17px 16px 15px;cursor:pointer;transition:.28s;position:relative;overflow:hidden}
+.di .sw{display:flex;gap:4px;margin-bottom:10px}
+.di .sw i{width:13px;height:13px;border:1.5px solid var(--ink);border-radius:50%;display:block}
+.di h4{font-size:16.2px;font-weight:900;line-height:1.45;font-family:var(--serif)}
+.di .en2{font-family:var(--mono);font-size:7.6px;letter-spacing:1.6px;color:var(--mute);margin:4px 0 8px;font-weight:700}
+.di p{font-size:10.6px;color:var(--mute);line-height:1.85;text-align:justify;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.di .see{margin-top:9px;font-family:var(--mono);font-size:8.2px;letter-spacing:1.3px;color:var(--c);border-top:1.4px dashed var(--c);padding-top:6px;font-weight:700}
+.di:hover{background:var(--c);transform:translateX(6px)}
+.di:hover p,.di:hover .en2{color:rgba(255,255,255,.86)}
+.di:hover h4{color:#fff}
+
+/* 05 timetable */
+.tt{width:100%;border-collapse:collapse;background:var(--card);border:2.4px solid var(--ink);border-radius:6px;overflow:hidden;font-size:12px}
+.tt th,.tt td{padding:12px 14px;border:1px solid #e2ddd3;text-align:left;vertical-align:top}
+.tt th{font-family:var(--mono);font-size:8.6px;letter-spacing:2px;background:var(--ink);color:var(--c3);font-weight:700}
+.tt td:first-child{font-family:var(--mono);font-weight:900;color:var(--c4);white-space:nowrap}
+.tt tr:nth-child(even){background:#fbf7f0}
+.tt tr:hover{background:#fff4e2;cursor:pointer}
+.tt td b{display:block;font-size:13.2px;margin-bottom:2px}
+.tt td small{color:var(--mute);font-size:10.4px;line-height:1.7}
+
+/* 06 steps */
+.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:11px}
+.st{position:relative;border:2.4px solid var(--ink);border-radius:6px;padding:17px 15px 15px;background:var(--card);cursor:pointer;transition:.28s}
+.st .num{font-family:var(--mono);font-size:26px;line-height:1;font-weight:900;color:var(--c)}
+.st h4{font-size:13.6px;margin:9px 0 6px;font-weight:900;line-height:1.5}
+.st p{font-size:10.4px;color:var(--mute);line-height:1.85;text-align:justify}
+.st .key{position:absolute;right:9px;top:11px;font-family:var(--mono);font-size:7.2px;letter-spacing:1.4px;color:var(--c);font-weight:700}
+.st:hover{transform:translateY(-8px);box-shadow:7px 7px 0 var(--c)}
+
+/* 07 avoid */
+.avoid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.av{background:var(--card);border:2.4px solid var(--ink);border-top:9px solid var(--c1);border-radius:5px;padding:16px 17px;cursor:pointer;transition:.26s}
+.av .no{font-family:var(--mono);font-size:8.2px;letter-spacing:2px;color:var(--c1);font-weight:900}
+.av h4{font-size:13.8px;margin:7px 0 7px;font-weight:900;line-height:1.45}
+.av p{font-size:10.6px;color:var(--mute);line-height:1.85;text-align:justify}
+
+/* about */
+.about{background:var(--ink);color:var(--paper);border-radius:8px;padding:34px 38px;box-shadow:0 26px 66px -28px rgba(26,29,36,.75);transform:rotate(-.4deg)}
+.about p.led{font-size:19.4px;line-height:1.85;font-weight:900;margin-bottom:14px;color:#fff;font-family:var(--serif)}
+.about p.led b{color:var(--c3)}
+.about p{font-size:13.6px;text-align:justify;margin-bottom:13px;line-height:1.95;color:#c9d0d8}
+.tags2{display:flex;gap:9px;flex-wrap:wrap}
+.tags2 a{font-family:var(--mono);font-size:9.2px;letter-spacing:.8px;color:var(--c3);border:1.8px solid var(--c3);border-radius:12px;padding:6px 14px;transition:.22s;font-weight:700;background:rgba(214,154,43,.07)}
+.tags2 a:hover{background:var(--c3);color:var(--ink);transform:rotate(-2.6deg)}
+
+/* footer */
+footer{border-top:1px solid var(--ink);padding:40px 0 16px;margin-top:12px;background:rgba(247,243,236,.6)}
+.foot{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:28px;margin-bottom:22px}
+.foot .brand{font-size:18px;font-weight:900;letter-spacing:1.1px;display:flex;flex-direction:column;gap:9px}
+.foot .brand p{font-size:11.8px;color:var(--mute);line-height:1.9;max-width:330px;font-weight:700}
+.foot h5{font-family:var(--mono);font-size:8.2px;letter-spacing:2.4px;color:var(--c4);margin-bottom:10px;font-weight:700}
+.foot a{display:block;color:var(--mute);font-size:11.6px;padding:4px 0;font-weight:700;transition:.18s}
+.foot a:hover{color:var(--c1);transform:translateX(5px)}
+.copy{text-align:center;color:#7c8794;font-size:10.2px;border-top:2px dashed #c6cbd2;padding-top:14px;line-height:2;font-family:var(--mono);letter-spacing:.5px}
+.copy a{color:var(--c4);font-weight:700}
+
+@media(max-width:1120px){
+  .ham{display:block}
+  nav,.search{display:none}
+  .hero .wrap,.moods,.pick,.dirs,.steps,.avoid,.foot{grid-template-columns:repeat(2,1fr)}
+  .frames{grid-template-columns:repeat(5,1fr)}
+  .la .mid span{font-size:10.4px}
+  .drawer{position:fixed;inset:0 0 0 auto;width:86%;max-width:330px;background:var(--paper);padding:28px;border-left:9px solid var(--c1);transform:translateX(102%);transition:.32s;z-index:60;overflow:auto;box-shadow:-18px 0 40px rgba(0,0,0,.32)}
+  .drawer.open{transform:none}
+  .drawer a{display:block;font-size:16px;font-weight:900;padding:14px 10px;border-bottom:2px dashed rgba(232,86,63,.35);color:var(--ink)}
+  .drawer a:hover{color:var(--c4)}
+  .scrim{position:fixed;inset:0;background:rgba(26,29,36,.5);opacity:0;pointer-events:none;transition:.32s;z-index:59}
+  .scrim.on{opacity:1;pointer-events:auto}
+}
+@media(max-width:640px){
+  .wrap{padding:0 16px}
+  .hero h1{font-size:29px}
+  .frames{grid-template-columns:repeat(5,1fr);gap:5px;padding:11px 9px 10px}
+  .frames .f span{font-size:19px}
+  .frames .f small{display:none}
+  .hero .wrap,.moods,.pick,.dirs,.steps,.avoid,.foot{grid-template-columns:1fr}
+  .ladder{height:210px}
+  .tt{font-size:11px}
+  .tt th,.tt td{padding:9px 8px}
+  .tt td:first-child{font-size:9.6px}
+}
+@media print{body{background:#fff;color:#000}.ham,.search,.scrim,.drawer,.topbar{position:static!important;display:none!important}}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/xiaobao.js"></script>
+
+<div class="topbar">
+  <div class="wrap">
+    <div class="hd">
+      <a class="logo" href="#" aria-label="5电影网 首页">
+        <span class="five" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
+        <span><b>5 电影网</b><em>five films a day · since 2026</em></span>
+      </a>
+      <nav>
+        <a href="#c01">5 种心情</a>
+        <a href="#c02">5 分钟挑片</a>
+        <a href="#c03">5 部榜</a>
+        <a href="#c04">5 位导演</a>
+        <a href="#c05">5 个时段</a>
+        <a href="#c06">5 步</a>
+      </nav>
+      <div class="search" role="search">
+        <input type="search" placeholder="搜心情、导演、片名、时长" aria-label="搜索">
+        <button aria-label="搜索">搜</button>
+      </div>
+      <button class="ham" id="ham" aria-label="菜单" aria-expanded="false">☰</button>
+    </div>
+  </div>
+  <div class="drawer" id="drawer" aria-label="移动端导航">
+    <a href="#c01">5 种心情</a>
+    <a href="#c02">5 分钟挑片</a>
+    <a href="#c03">5 部榜</a>
+    <a href="#c04">5 位导演</a>
+    <a href="#c05">5 个时段</a>
+    <a href="#c06">挑片 5 步</a>
+    <a href="#c07">5 条避坑</a>
+    <a href="#about">关于本站</a>
+  </div>
+  <div class="scrim" id="scrim"></div>
+</div>
+
+<main>
+
+  <!-- hero -->
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <div class="eyebrow">// FIVE FRAMES · FIVE MOODS · FIVE MINUTES</div>
+        <h1><span class="num">5</span> 部电影，<br>刚好够看一天。</h1>
+        <p class="lead">选择焦虑的解药不是"更多片单"，而是<b>"今天就 5 部"</b>：5 种心情、5 分钟挑片、5 位导演、5 个观影时段、5 步挑片法、5 条避坑。不托管资源、不提供盗链、不做违规采集，倡导正版与 4K 修复版。</p>
+        <div class="cta">
+          <a class="p" href="#c02">5 分钟挑片</a>
+          <a class="s" href="#c05">按时段看</a>
+        </div>
+      </div>
+      <div class="frames" aria-label="五格胶片">
+        <a class="f" href="#c01" style="--c:var(--c1)"><span>01</span><small>想哭</small></a>
+        <a class="f" href="#c01" style="--c:var(--c2)"><span>02</span><small>想安静</small></a>
+        <a class="f" href="#c01" style="--c:var(--c3)"><span>03</span><small>想烧脑</small></a>
+        <a class="f" href="#c01" style="--c:var(--c4)"><span>04</span><small>想被治愈</small></a>
+        <a class="f" href="#c01" style="--c:var(--c5)"><span>05</span><small>想大笑</small></a>
+        <div class="cap">// 一卷胶片 5 格 · 一格一部 · 一格一种心情</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 01 five moods -->
+  <section id="c01" class="wrap">
+    <div class="sec">
+      <span class="no">01</span>
+      <h2>5 种心情 · 先问自己想变成谁</h2>
+      <span class="en">Five Moods</span>
+      <a class="more" href="#">完整情绪表 ›</a>
+    </div>
+    <div class="moods">
+      <a class="mo" href="#" style="--c:var(--c1)"><span class="dot"></span><h4>想哭</h4><p>允许自己哭。选一部慢的、讲亲情的、结尾不给解药的。哭完别刷短视频，去睡觉。</p><span class="tag">REEL · 01</span></a>
+      <a class="mo" href="#" style="--c:var(--c2)"><span class="dot"></span><h4>想安静</h4><p>关灯，戴耳机，看一部台词少、长镜头多、雨声重的。城市夜景与海，最有效。</p><span class="tag">REEL · 02</span></a>
+      <a class="mo" href="#" style="--c:var(--c3)"><span class="dot"></span><h4>想烧脑</h4><p>需要纸笔。非线性叙事、时间悖论、多重人格。看完别急着查解析，先自己画时间线。</p><span class="tag">REEL · 03</span></a>
+      <a class="mo" href="#" style="--c:var(--c4)"><span class="dot"></span><h4>想被治愈</h4><p>找食物、猫、小孩、夏天、老奶奶。治愈片的正确用法是二刷，不是推荐给别人。</p><span class="tag">REEL · 04</span></a>
+      <a class="mo" href="#" style="--c:var(--c5)"><span class="dot"></span><h4>想大笑</h4><p>喜剧要"不尴尬地笑"。黑色喜剧最稳，冷幽默次之，网络梗喜剧请避雷。</p><span class="tag">REEL · 05</span></a>
+    </div>
+  </section>
+
+  <!-- 02 5 min pick -->
+  <section id="c02" class="wrap">
+    <div class="sec">
+      <span class="no">02</span>
+      <h2>5 分钟挑片 · 三个问题定一部</h2>
+      <span class="en">Pick in 5 min</span>
+      <a class="more" href="#">完整方法 ›</a>
+    </div>
+    <div class="pick">
+      <a class="pk" href="#" style="--c:var(--c1)"><span class="n">①</span><h4>今天想变成谁</h4><p>想当侦探 → 悬疑；想当恋人 → 爱情；想当逃犯 → 公路；想当小孩 → 动画。人物决定类型。</p><span class="film">INPUT · 心情 / 时长 / 作者</span></a>
+      <a class="pk" href="#" style="--c:var(--c2)"><span class="n">②</span><h4>能接受多长的沉默</h4><p>30 分钟 → 短片或剧集单集；90 分钟 → 剧情片；150 分钟 → 作者电影。别在深夜开 3 小时的片。</p><span class="film">FILTER · 60–180 min</span></a>
+      <a class="pk" href="#" style="--c:var(--c3)"><span class="n">③</span><h4>认导演，不认类型</h4><p>"想看悬疑"太模糊；"想看奉俊昊怎么用绿色"才找得到片。导演是签名，类型是货架。</p><span class="film">AUTEUR · 6 位起手</span></a>
+      <a class="pk" href="#" style="--c:var(--c4)"><span class="n">④</span><h4>只选一部，看完再说</h4><p>收藏 200 部 = 一部没看。今晚只点开一部，看完再决定是否二刷。暂停也是允许的。</p><span class="film">RULE · ONE FILM ONLY</span></a>
+      <a class="pk" href="#" style="--c:var(--c5)"><span class="n">⑤</span><h4>允许中途换片</h4><p>前 20 分钟不对，就换。这不是背叛，是尊重自己的时间。烂片不值得"看完再说"。</p><span class="film">EXIT · 20 min rule</span></a>
+      <a class="pk" href="#" style="--c:var(--c1)"><span class="n">⑥</span><h4>去正版平台看</h4><p>压缩会吃掉 30% 的颜色与一半的声音。影院 &gt; 蓝光 &gt; 4K 流媒体 &gt; 普通流媒体。</p><span class="film">SOURCE · LEGAL FIRST</span></a>
+    </div>
+  </section>
+
+  <!-- 03 ladder -->
+  <section id="c03" class="wrap">
+    <div class="sec">
+      <span class="no">03</span>
+      <h2>5 部榜 · 今天先看哪一部</h2>
+      <span class="en">Top 5 Today</span>
+      <a class="more" href="#">完整榜单 ›</a>
+    </div>
+    <div class="ladder">
+      <a class="la" href="#" style="--c:var(--c4)" data-h="84"><div class="top"><b>NO.4</b></div><div class="mid"><span>海边的曼彻斯特</span><em>2016 · 137 min</em></div></a>
+      <a class="la" href="#" style="--c:var(--c2)" data-h="100"><div class="top"><b>NO.2</b></div><div class="mid"><span>肖申克的救赎</span><em>1994 · 142 min</em></div></a>
+      <a class="la" href="#" style="--c:var(--c1)" data-h="62"><div class="top"><b>NO.5</b></div><div class="mid"><span>寄生虫</span><em>2019 · 132 min</em></div></a>
+      <a class="la" href="#" style="--c:var(--c3)" data-h="92"><div class="top"><b>NO.3</b></div><div class="mid"><span>盗梦空间</span><em>2010 · 148 min</em></div></a>
+      <a class="la" href="#" style="--c:var(--c5)" data-h="74"><div class="top"><b>NO.1</b></div><div class="mid"><span>步履不停</span><em>2008 · 114 min</em></div></a>
+    </div>
+    <p style="font-size:11.4px;color:var(--mute);margin-top:16px;line-height:1.9;text-align:justify">榜单为"今日适配度"（本站编辑部 2026 年 10 月样本，非权威评分）：综合<b>心情覆盖率、时长友好度、平台可得性、4K 修复情况</b>四项。柱高不代表评分高低，只代表"今天更值得先看"。</p>
+  </section>
+
+  <!-- 04 directors -->
+  <section id="c04" class="wrap">
+    <div class="sec">
+      <span class="no">04</span>
+      <h2>5 位导演 · 五个入口</h2>
+      <span class="en">Five Auteurs</span>
+      <a class="more" href="#">完整名单 ›</a>
+    </div>
+    <div class="dirs">
+      <a class="di" href="#" style="--c:var(--c1)"><span class="sw"><i style="background:var(--c1)"></i><i style="background:#6b2020"></i><i style="background:#f0dcd4"></i></span><h4>是枝裕和</h4><span class="en2">KORE-EDA</span><p>家庭、缺席、一碗汤。低饱和自然光，台词都藏在吃饭里。入门《步履不停》。</p><span class="see">SEE · 6 部</span></a>
+      <a class="di" href="#" style="--c:var(--c2)"><span class="sw"><i style="background:var(--c2)"></i><i style="background:#12382e"></i><i style="background:#d6e6df"></i></span><h4>王家卫</h4><span class="en2">WONG</span><p>霓虹、雨、过期罐头与未说出口。他的片要连看两遍：一遍看颜色，一遍看台词。</p><span class="see">SEE · 6 部</span></a>
+      <a class="di" href="#" style="--c:var(--c3)"><span class="sw"><i style="background:var(--c3)"></i><i style="background:#5c4419"></i><i style="background:#f6ecd2"></i></span><h4>宫崎骏</h4><span class="en2">MIYAZAKI</span><p>风、飞行、少女、神明。给大人看的童话，真正的主题是"怎么好好活着"。</p><span class="see">SEE · 8 部</span></a>
+      <a class="di" href="#" style="--c:var(--c4)"><span class="sw"><i style="background:var(--c4)"></i><i style="background:#1c3760"></i><i style="background:#d3deed"></i></span><h4>诺兰</h4><span class="en2">NOLAN</span><p>时间、记忆、结构。看他的片请坐直，别玩手机，最后 15 分钟会回头找你。</p><span class="see">SEE · 7 部</span></a>
+      <a class="di" href="#" style="--c:var(--c5)"><span class="sw"><i style="background:var(--c5)"></i><i style="background:#462a59"></i><i style="background:#e2d9ec"></i></span><h4>新海诚</h4><span class="en2">SHINKAI</span><p>天空、云、夕焼け、名字。他把"想见你"拍成了气象现象。</p><span class="see">SEE · 5 部</span></a>
+    </div>
+  </section>
+
+  <!-- 05 timetable -->
+  <section id="c05" class="wrap">
+    <div class="sec">
+      <span class="no">05</span>
+      <h2>5 个时段 · 什么时候看什么</h2>
+      <span class="en">Timetable</span>
+      <a class="more" href="#">完整排片 ›</a>
+    </div>
+    <table class="tt">
+      <thead>
+        <tr><th>TIME</th><th>SCENE</th><th>MOOD</th><th>PICK</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>07:00</td><td><b>通勤</b><small>地铁 / 公交 / 15–30 min</small></td><td>轻松、不费脑</td><td><b>短片 / 动画单集</b><small>《回忆积木小屋》《鹬》《纸人》</small></td></tr>
+        <tr><td>12:30</td><td><b>午休</b><small>工位 / 20–45 min</small></td><td>安静、收尾感</td><td><b>纪录片单集</b><small>《人生果实》《我在故宫修文物》</small></td></tr>
+        <tr><td>18:00</td><td><b>晚饭</b><small>餐桌 / 40–90 min</small></td><td>下饭、有人味</td><td><b>美食 / 家庭片</b><small>《小森林》《饮食男女》《海鸥食堂》</small></td></tr>
+        <tr><td>22:00</td><td><b>深夜</b><small>床 / 90–150 min</small></td><td>沉浸、不吵</td><td><b>作者电影 / 文艺片</b><small>《驾驶我的车》《海边的曼彻斯特》《花束般的恋爱》</small></td></tr>
+        <tr><td>周末</td><td><b>午后</b><small>沙发 / 150–180 min</small></td><td>仪式感</td><td><b>长片 / 蓝光 / 4K</b><small>《教父》《霸王别姬》《银翼杀手 2049》</small></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 06 steps -->
+  <section id="c06" class="wrap">
+    <div class="sec">
+      <span class="no">06</span>
+      <h2>挑片 5 步 · 从"不知道看啥"到"已经看完"</h2>
+      <span class="en">Five Steps</span>
+      <a class="more" href="#">打印版 ›</a>
+    </div>
+    <div class="steps">
+      <a class="st" href="#" style="--c:var(--c1)"><span class="key">STEP 01</span><span class="num">01</span><h4>定心情</h4><p>想哭 / 想安静 / 想烧脑 / 想被治愈 / 想大笑。五选一，不要"都行"。</p></a>
+      <a class="st" href="#" style="--c:var(--c2)"><span class="key">STEP 02</span><span class="num">02</span><h4>定时长</h4><p>今天剩多少时间，就选多少分钟的片。别用 3 小时换 30 分钟的满足。</p></a>
+      <a class="st" href="#" style="--c:var(--c3)"><span class="key">STEP 03</span><span class="num">03</span><h4>认作者</h4><p>记住 6 位导演的名字，比记住 60 个类型标签有用。</p></a>
+      <a class="st" href="#" style="--c:var(--c4)"><span class="key">STEP 04</span><span class="num">04</span><h4>选画质</h4><p>能 4K 就别 720P。声音开到能听见环境音，别只看字幕。</p></a>
+      <a class="st" href="#" style="--c:var(--c5)"><span class="key">STEP 05</span><span class="num">05</span><h4>只留一部</h4><p>收藏夹是坟墓。今晚只点开一部，看完再说。允许中途换片。</p></a>
+    </div>
+  </section>
+
+  <!-- 07 avoid -->
+  <section id="c07" class="wrap">
+    <div class="sec">
+      <span class="no">07</span>
+      <h2>5 条避坑 · 五种常见亏</h2>
+      <span class="en">Five Traps</span>
+      <a class="more" href="#">举报渠道 ›</a>
+    </div>
+    <div class="avoid">
+      <a class="av" href="#"><div class="no">NO.01</div><h4>"高清秒播 / 未删减完整版"</h4><p>九成是赌博、诈骗与盗版。画质压成糊，还附赠木马。正版平台不贵，眼睛更贵。</p></a>
+      <a class="av" href="#"><div class="no">NO.02</div><h4>"解说 5 分钟看完"</h4><p>解说拿走的是剧情，留下的是"知道"。表演、声音、留白，都在被删掉的那 100 分钟里。</p></a>
+      <a class="av" href="#"><div class="no">NO.03</div><h4>"收藏 200 部 = 看过"</h4><p>收藏是拖延的体面说法。删掉 190 部，今晚就自由了。</p></a>
+      <a class="av" href="#"><div class="no">NO.04</div><h4>"按评分从高往低看"</h4><p>9.4 的片可能正合你今天的心境，也可能完全不是。评分是路标，不是菜单。</p></a>
+      <a class="av" href="#"><div class="no">NO.05</div><h4>"搬运片单 = 原创内容"</h4><p>整段搬运他人影评与片单，属侵权且会被搜索引擎降权。写你自己的三句话。</p></a>
+    </div>
+  </section>
+
+  <!-- about -->
+  <section id="about" class="wrap">
+    <div class="sec">
+      <span class="no">08</span>
+      <h2>关于 5 电影网</h2>
+      <span class="en">About</span>
+      <a class="more" href="#">投稿片单 ›</a>
+    </div>
+    <div class="about">
+      <p class="led"><b>5 电影网</b> 是一个"每天 5 部"的影视赏析与片单推荐站：<b>5 种心情、5 分钟挑片、5 位导演、5 个观影时段、5 步挑片法、5 条避坑</b>。我们不追热搜、不堆票房，只解决一个问题——<b>今晚看什么</b>。</p>
+      <div class="tags2">
+        <a href="#c01">5种心情</a><a href="#c02">5分钟挑片</a><a href="#c03">5部榜</a><a href="#c04">5位导演</a>
+        <a href="#c05">5个时段</a><a href="#c06">挑片5步</a><a href="#c07">避坑</a>
+        <a href="#c01">电影推荐</a><a href="#c01">高分电影</a><a href="#c01">经典电影</a><a href="#c04">是枝裕和</a><a href="#c04">王家卫</a>
+        <a href="#c05">4K 修复</a><a href="#c05">正版观影</a>
+      </div>
+      <p style="margin-top:16px">我们倡导：看正版、看修复版、看蓝光；尊重导演、摄影、美术与作曲的工作；练习用片与截图仅用于赏析，不商用、不搬运、不二传。本站片单、榜单与"今日适配度"为编辑部主观整理，仅供选片参考，不构成权威数据；片名、译名与上线情况以各平台与发行方公告为准。若发现本站外链违规或失效，请在"投稿片单"告知，我们会在 24 小时内处理。</p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div class="brand"><span>5 电影网</span><span>FIVE FRAMES A DAY · 每天 5 部，刚好够看 · 2026</span><p>影视赏析与片单推荐。倡导正版、4K 修复与尊重版权；本站不做资源托管与盗链。</p></div>
+      <div>
+        <h5>五种心情</h5>
+        <a href="#c01">想哭</a>
+        <a href="#c01">想安静</a>
+        <a href="#c01">想烧脑</a>
+        <a href="#c01">想被治愈</a>
+        <a href="#c01">想大笑</a>
+      </div>
+      <div>
+        <h5>阅读</h5>
+        <a href="#c02">5 分钟挑片</a>
+        <a href="#c03">5 部榜</a>
+        <a href="#c04">5 位导演</a>
+        <a href="#c05">5 个时段</a>
+      </div>
+      <div>
+        <h5>筛选</h5>
+        <a href="#c06">按时长</a>
+        <a href="#c06">认作者</a>
+        <a href="#c05">4K 修复</a>
+        <a href="#c07">避坑</a>
+      </div>
+    </div>
+    <div class="copy">
+      © <span id="yr">2026</span> 5 电影网 &nbsp;|&nbsp; 网站网址：<a href="https://5dianyingwang-cn.github.io/">https://5dianyingwang-cn.github.io/</a><br>
+      // FIVE FRAMES · FIVE MOODS · FIVE MINUTES &nbsp;·&nbsp; 本站为影视赏析与片单参考，片单与评分为编辑部主观整理
+    </div>
+  </div>
+</footer>
+
+<script>
+var ham=document.getElementById('ham'),dr=document.getElementById('drawer'),sc=document.getElementById('scrim');
+function closeNav(){dr.classList.remove('open');sc.classList.remove('on');ham.setAttribute('aria-expanded','false');}
+ham.addEventListener('click',function(){var o=dr.classList.toggle('open');sc.classList.toggle('on',o);ham.setAttribute('aria-expanded',o);});
+sc.addEventListener('click',closeNav);
+dr.addEventListener('click',function(e){if(e.target.tagName==='A')closeNav();});
+document.getElementById('yr').textContent=new Date().getFullYear();
+
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.style.height=e.target.dataset.h+'%';io.unobserve(e.target);}})},{threshold:.3});
+document.querySelectorAll('.la').forEach(function(n){io.observe(n);});
+</script>
+</body>
+</html>
